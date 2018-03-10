@@ -18,12 +18,25 @@ page{
     animation: x 8s infinite;
 }
 #q{
-    background-color: yellowgreen;
+    background-image: url("../images/qiu.jpg");
+    background-size: 100% 100%;
     animation: q 8s infinite;
 }
 #d{
     background-color: white;
     animation: d 8s infinite;
+}
+#z{
+    font-size: 36px;
+    display: block;
+    animation: z 8s infinite;
+}
+@keyframes z {
+    0%{opacity: 0}
+    70%{opacity: 0}
+
+    90%{opacity: 100}
+    100%{opacity: 0}
 }
 @keyframes c {
     0%{opacity: 0}
