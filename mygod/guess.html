@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="message"></div>
+</body>
+</html>
+<script>
+    var a = Math.random();
+    var binggo = false;
+    function guess() {
+        if (binggo){
+            return;
+        }
+        var guess = prompt("您猜骰子点数是多少？");
+        if(!Number.isInteger(guess/1)||guess>6||guess<1){
+            document.getElementById("message").innerHTML="您输入有误！";
+            return;
+        }
+        var diff = Math.abs(a-guess);
+        var str;
+        if (guess == a){
+            str="您猜中了！"+"<img src=\"../001basic/images/"+a+".png\"/>";
+            binggo = true;
+        }
+        else if(guess<a){
+            if(diff>1){
+                str="您猜得太小了！";
+            }
+            else{
+                str="您猜得有点小";
+            }
+        }
+        else{
+            if(diff>1){
+                str="您猜得太大了！";
+            }
+            else{
+                str="您猜得有点大";
+            }
+        }
+        document.getElementById("message").innerHTML= str;
+    }
+    a = Math.floor(a*6)+1;
+    console.info(a);
+    guess();
+    guess();
+</script>
